@@ -6,7 +6,7 @@ sys.stdout = open("speeding.out","w")
 
 N,M = map(int, input().split())
 
-road = [0]*100
+road = [0]*100 #initialize road of 100 miles
 bes = [0] *100
 
 roadInfo = []
