@@ -1,16 +1,11 @@
 import sys
-
-sys.stdin = open("paint.in", "r")
-sys.stdout = open("paint.out", "w")
+sys.stdin = open("paint.in","r")
+sys.stdout = open("paint.out","w")
 
 a,b = map(int, input().split())
 c,d = map(int, input().split())
 
+def findIntersection(a,b,c,d):
+  return max(min(b,d)-max(a,c),0) #to find length of overlap of 2 lines, do this
 
-def findOverlap(a1,a2,b1,b2): #find overlap
-  return max(0, min(a2, b2) - max(a1, b1))
-  
-if findOverlap(a,b,c,d)==0:
-  print(b-a+d-c)
-else:
-  print(b-a+d-c - findOverlap(a,b,c,d))
+print(b-a+d-c-findIntersection(a,b,c,d))
