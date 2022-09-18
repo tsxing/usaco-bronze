@@ -2,10 +2,10 @@ import sys
 sys.stdin = open("square.in","r")
 sys.stdout = open("square.out","w")
 
-x1,y1,x2,y2 = map(int, input().split()) #1st rec
-a1,b1,a2,b2 = map(int, input().split()) #2nd rec
+x1,y1,x2,y2 = map(int, input().split())
+r2x1,r2y1,r2x2,r2y2 = map(int, input().split())
 
-horDis = max(x1,x2,a1,a2) - min(x1,x2,a1,a2)
-verDis = max(y1,y2,b1,b2) - min(y1,y2,b1,b2)
-
-print(max(horDis,verDis)**2)
+if abs(max(r2y2,y2)-min(r2y1,y1))>abs(max(r2x2,x2)-min(r2x1,x1)):
+  print(abs(max(r2y2,y2)-min(r2y1,y1))**2)
+else:
+  print(abs(max(r2x2,x2)-min(r2x1,x1))**2)
