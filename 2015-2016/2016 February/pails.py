@@ -8,7 +8,7 @@ maxMilk = 0 #define answer
 third = 0 #milk in third pail
 
 for i in range(1001): #M is at most 1000
-  if i*X>M: #if milk we're pouring from X > M
+  if i*X>M: #if milk pouring from X > M
     break
   for j in range(1001):
     third = i*X +j*Y #amt of milk third pail has
