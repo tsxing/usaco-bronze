@@ -1,14 +1,13 @@
+
 N = int(input())
-p = [int(x) for x in input().split()]
-photos = 0
+petals = [int(x) for x in input().split()]
+cnt = 0
+
 for i in range(N):
   for j in range(i,N):
-    totPedals =0
-    for k in range(i,j+1):
-      totPedals += p[k]
-    for k in range(i,j+1):
-      if p[k]*(j-i+1) == totPedals:
-        photos +=1
-        break
-
-print(photos)
+    avg=sum(petals[i:j+1])/(j-i+1)
+    for f in range(i,j+1):
+      if petals[f]==avg:
+        cnt += 1
+        break 
+print(cnt)
